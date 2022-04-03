@@ -12,7 +12,7 @@ function addTask() {
     $input.setAttribute('name', 'tarefa')
     $input.addEventListener('click', toggleRemoved)
     $label.appendChild($input)
-    $label.appendChild(document.createTextNode(newTask))
+    $label.appendChild(document.createTextNode(' ' + newTask))
     $div.appendChild($label)
     $li.appendChild($div)
     $ul.appendChild($li)
@@ -21,7 +21,7 @@ function addTask() {
 
 function toggleRemoved(e) {
     const $li = e.currentTarget.closest('li')
-    $li.classList.toggle('removed')
+    $li.innerHTML = ""
 }
 
 function changeTitle(){
